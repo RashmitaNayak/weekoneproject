@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,8 +17,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class LoginTests {
-
+public class EditprofileTest {
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
@@ -26,14 +26,10 @@ public class LoginTests {
 	private ScreenShot screenShot;
 
 	@BeforeClass
-	public static void setUpBeforeClass() throws IOException {
+	public void setUpBeforeClass() throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
-	}
-
-	@BeforeMethod
-	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
 		editprofilePOM = new EditProfilePOM(driver);
@@ -43,18 +39,32 @@ public class LoginTests {
 		// open the browser 
 		driver.get(baseUrl);
 	}
+
 	
-	@AfterMethod
-	public void tearDown() throws Exception {
+	
+	@AfterTest
+	public void close() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
 	}
+	
 	@Test
-	public void validLoginTest() {
-		loginPOM.sendUserName("admin");
-		loginPOM.sendPassword("admin@123");
+	public void editprofileTest() {
+		loginPOM.sendUserName("manzoor");
+		loginPOM.sendPassword("mehadim");
 		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("First");
+		screenShot.captureScreenShot("first");
+		editprofilePOM.clickHomepageBtn();
+		editprofilePOM.clickProfileBtn();
+		editprofilePOM.clickEditprofileBtn();
+        editprofilePOM.changePassword("mehadim");
+        editprofilePOM.enterNewpassword("mehadi");
+        editprofilePOM.confirmNewpassword("mehadi");
+        editprofilePOM.clickSavesettingsBtn(); 
+		screenShot.captureScreenShot("Second");
 	}
-
 }
+
+ 
+  
+
