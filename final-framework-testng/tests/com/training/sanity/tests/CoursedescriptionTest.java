@@ -15,6 +15,7 @@ import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
 public class CoursedescriptionTest {
+	//shows the course description
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;

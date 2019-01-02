@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SubscribePOM {
+	//subscribes selected course
 private WebDriver driver; 
 	
 	public SubscribePOM(WebDriver driver) {
@@ -14,7 +15,7 @@ private WebDriver driver;
 
 }
 	
-	@FindBy(xpath="//*[@id=\"menuone\"]/ul[1]/li[2]/a")
+	@FindBy(xpath="//a[@title='My courses']")
 	private WebElement mycoursesbtn ;
 	
 	public void clickMycoursesBtn() {
@@ -22,7 +23,7 @@ private WebDriver driver;
 	}
 	
 	
-	@FindBy(xpath="//*[@id=\"homepage-course\"]/div/a")
+	@FindBy(xpath="//a[@class='btn btn-primary btn-large']")
 	private WebElement coursecataloglink ;
 	
 	public void clickCoursescataloglink() {
@@ -35,13 +36,13 @@ private WebDriver driver;
 		this.entervalueinsearchbox.clear(); 
 		this.entervalueinsearchbox.sendKeys(value1);
 	}
-	@FindBy(xpath="//*[@id=\"content-section\"]/div/div[2]/div[1]/div/div/div[1]/form/div/div/button")
+	@FindBy(xpath="//button[@type='submit']")
 	private WebElement clickonsearchbtn ;
 	
 	public void clickSearchbtn() {
 		this.clickonsearchbtn.click(); 
 	}
-	@FindBy(linkText="Subscribe")
+	@FindBy(xpath="//div[@class='row']//div[9]//div[1]//div[2]//div[4]//div[2]//div[1]//a[1]")
 	private WebElement subscribebtn ;
 	
 	public void clickSubscribebtn() {

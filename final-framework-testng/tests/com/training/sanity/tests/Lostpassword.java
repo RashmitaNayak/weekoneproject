@@ -24,6 +24,7 @@ public class Lostpassword {
 
 	@BeforeClass
 	public void setUpBeforeClass() throws IOException {
+		//clicks on lost password link and sends mail for resetting password after entering the valid mail id
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);

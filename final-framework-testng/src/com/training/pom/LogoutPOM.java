@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LogoutPOM {
+	//logs out of the profile
 private WebDriver driver; 
 	
 	public LogoutPOM(WebDriver driver) {

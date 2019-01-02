@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LostpasswordPOM {
+	//clicks on lost password link and sends mail for resetting password after entering the valid mail id
 private WebDriver driver; 
 	
 	public LostpasswordPOM(WebDriver driver) {

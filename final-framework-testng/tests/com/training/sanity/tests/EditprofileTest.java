@@ -27,6 +27,7 @@ public class EditprofileTest {
 
 	@BeforeClass
 	public void setUpBeforeClass() throws IOException {
+		//edits profile
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class EditProfilePOM {
+	//edits profile
 private WebDriver driver; 
 	
 	public EditProfilePOM(WebDriver driver) {
