@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class TakeAssessmentPOM {
-	//To verify whether the application allows the student to take the authored assessment
+	//To verify whether the application allows the student to take the authored assessment testcase-ELTC_042
 private WebDriver driver; 
 	
 	public TakeAssessmentPOM(WebDriver driver) {
@@ -22,7 +22,8 @@ private WebDriver driver;
 	public void clickLearnselenium1link1() {
 		this.learnselenium1link.click(); 
 	}
-	private WebElement assessmenticon = driver.findElement(By.xpath("//img[@id='toolimage_1949']"));
+	@FindBy(xpath="//img[@id='toolimage_1949']")
+	private WebElement assessmenticon ; ;
 	
 	
 

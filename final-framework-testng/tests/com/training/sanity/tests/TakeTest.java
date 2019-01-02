@@ -4,29 +4,31 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
 import com.training.pom.LoginPOM;
-
-import com.training.pom.TakeAssessmentPOM;
+import com.training.pom.SubscribePOM;
+import com.training.pom.TestPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class Takeassessment {
-	//To verify whether the application allows the student to take the authored assessment
+public class TakeTest {
+	//To verify whether the application allows the student to subscribe course testcase-ELTC_041
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
-	private TakeAssessmentPOM takeassessmentPOM;
+	private TestPOM testPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
-	
-	
+	private  JavascriptExecutor js;
+
 	@BeforeClass
 	public void setUpBeforeClass() throws IOException {
+		//subscribes selected course
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
@@ -34,9 +36,9 @@ public class Takeassessment {
 		
 		
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		
+		js = (JavascriptExecutor) driver;
 		loginPOM = new LoginPOM(driver); 
-		takeassessmentPOM = new TakeAssessmentPOM(driver);
+		testPOM = new TestPOM(driver);
 		/*Actions action =new Actions(driver);*/
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
@@ -53,34 +55,28 @@ public class Takeassessment {
 	}*/
 	
 	@Test
-	public void assessmentTest() throws InterruptedException {
+	public void subscribeTest() throws InterruptedException {
 		loginPOM.sendUserName("manzoor");
 		loginPOM.sendPassword("mehadi");
 		loginPOM.clickLoginBtn(); 
 		screenShot.captureScreenShot("first");
-		takeassessmentPOM.clickLearnselenium1link1();
+		testPOM.clickMycourseslink();
 		System.out.println("coursebtn");
+	
+		testPOM.clickCoursecataloglink();
+		System.out.println("coursecataloglink");
 		Thread.sleep(2000);
-		
-		Thread.sleep(5000);
-		takeassessmentPOM.clickAssessmenticon();
-		System.out.println("lernseleniumlink");
-		Thread.sleep(5000);
-		takeassessmentPOM.clickOntest1link();
+        testPOM.enterValueinsearchbox("Learn Selenium");
         Thread.sleep(2000);
-        System.out.println("testicon");
+        System.out.println("entervalue");
         Thread.sleep(2000);
-        takeassessmentPOM.clickOnstarttest1btn();
-        Thread.sleep(2000);
-        takeassessmentPOM.writeAnswer1("selenium is a web automation tool");
-        Thread.sleep(2000);
+        testPOM.clickSearchbtn();
+        Thread.sleep(4000);
+        js.executeScript("window.scrollBy(0,1000)");
+        testPOM.clickSubscribebtn(); 
+        driver.navigate().refresh();
         
-        takeassessmentPOM.clickEndtestbtn1();
-        Thread.sleep(2000);
-        
-        
-		screenShot.captureScreenShot("ninth");
+		screenShot.captureScreenShot("Seventh");
 	}
-
 
 }
