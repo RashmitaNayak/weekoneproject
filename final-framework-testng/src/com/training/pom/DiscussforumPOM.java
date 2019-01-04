@@ -1,5 +1,6 @@
 package com.training.pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -45,14 +46,14 @@ public class DiscussforumPOM {
 				this.threadtitlebox.sendKeys(value4); 
 			}
 			
-			@FindBy(xpath="//iframe[@title='Rich Text Editor, post_text']")
+			@FindBy(xpath="//*[contains(text(),'Rich Text Editor, post_text')]")
 			private WebElement threadpostbox ;
 			
-			public void writeThreadpostbox() {
+			public void writeThreadpostbox(String value5) {
 				
-					/*driver.switchTo().frame("Rich Text Editor, post_text");*/
-					this.threadpostbox.sendKeys("value5");
-					//driver.switchTo().defaultContent();
+					driver.switchTo().frame(0);
+					this.threadpostbox.sendKeys(value5);
+					driver.switchTo().defaultContent();
 				 
 			}
 			@FindBy(xpath="//button[@id='thread_SubmitPost']")
