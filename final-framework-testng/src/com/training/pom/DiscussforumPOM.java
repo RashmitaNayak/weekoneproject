@@ -46,7 +46,7 @@ public class DiscussforumPOM {
 				this.threadtitlebox.sendKeys(value4); 
 			}
 			
-			@FindBy(xpath="//*[contains(text(),'Rich Text Editor, post_text')]")
+			@FindBy(xpath="/html/body")
 			private WebElement threadpostbox ;
 			
 			public void writeThreadpostbox(String value5) {

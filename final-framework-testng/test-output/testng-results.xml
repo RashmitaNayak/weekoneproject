@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="56651" started-at="2019-01-04T13:27:52Z" finished-at="2019-01-04T13:28:49Z">
+  <suite name="Default suite" duration-ms="12426" started-at="2019-01-16T15:08:42Z" finished-at="2019-01-16T15:08:55Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="56651" started-at="2019-01-04T13:27:52Z" finished-at="2019-01-04T13:28:49Z">
-      <class name="com.training.sanity.tests.ChatTest">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.ChatTest@ae45eb6]" name="setUpBeforeClass" is-config="true" duration-ms="9456" started-at="2019-01-04T13:27:52Z" finished-at="2019-01-04T13:28:02Z">
+    <test name="Default test" duration-ms="12426" started-at="2019-01-16T15:08:42Z" finished-at="2019-01-16T15:08:55Z">
+      <class name="com.training.sanity.tests.ELTC_073Test">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.ELTC_073Test@59f99ea]" name="setUpBeforeClass" is-config="true" duration-ms="11982" started-at="2019-01-16T15:08:42Z" finished-at="2019-01-16T15:08:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="subscribeTest()[pri:0, instance:com.training.sanity.tests.ChatTest@ae45eb6]" name="subscribeTest" duration-ms="47167" started-at="2019-01-04T13:28:02Z" finished-at="2019-01-04T13:28:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- subscribeTest -->
-      </class> <!-- com.training.sanity.tests.ChatTest -->
+      </class> <!-- com.training.sanity.tests.ELTC_073Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

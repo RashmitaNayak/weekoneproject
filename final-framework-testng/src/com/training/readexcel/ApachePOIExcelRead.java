@@ -15,7 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  * 
- * @author Naveen
+ * @author Rashmita
  * @see this class  will take the records from excel sheet, and return it as list of list of object, and can be 
  *    		 generic, can given any records until it exists. Test it with main method provided, and the path is 
  *    		hard coded, participatns are asked to refractor this path in the property file and access.  
@@ -23,7 +23,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ApachePOIExcelRead {
 
 	// List<Object[]> -> List<List<Object>>
-	public static List<List<Object>> getExcelContent(String fileName) {
+	public static List<List<Object>> getExcelContent(String fileName,String sheetName) {
 		List<List<Object>> list = new ArrayList<List<Object>>();
 		try {
 			System.out.println("File Name  Got " + fileName);
@@ -33,8 +33,8 @@ public class ApachePOIExcelRead {
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 
 			// Get first/desired sheet from the workbook
-			XSSFSheet sheet = workbook.getSheetAt(0);
-
+			//XSSFSheet sheet = workbook.getSheetAt(0);
+			XSSFSheet sheet = workbook.getSheet("Sheet1");
 			// Iterate through each rows one by one
 			Iterator<Row> rowIterator = sheet.iterator();
 			while (rowIterator.hasNext()) {
@@ -72,10 +72,10 @@ public class ApachePOIExcelRead {
 	
 	
 	public static void main(String[] args) {
-		String fileName = "C:/Users/Naveen/Desktop/Testing.xlsx";
-
-		for (List<Object> temp : getExcelContent(fileName)) {
-			System.out.println(temp.get(0) + ", " + temp.get(1));
-		}
+		String fileName = "C:\\Users\\IBM_ADMIN\\Documents\\seleniumtestsheets\\testdatafor072data.xlsx";
+String sheetName = "";
+		//for (List<Object> temp : getExcelContent(fileName,sheetName)) {
+			//System.out.println(temp.get(0) + ", " + temp.get(1) );
+		//}
 	}
 }

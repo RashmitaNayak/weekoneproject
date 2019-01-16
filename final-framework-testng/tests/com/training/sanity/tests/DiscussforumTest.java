@@ -24,7 +24,7 @@ public class DiscussforumTest {
 	private static Properties properties;
 	private ScreenShot screenShot;
 	private  JavascriptExecutor js;
-
+   public String wait;
 	@BeforeClass
 	public void setUpBeforeClass() throws IOException {
 		//
@@ -61,7 +61,7 @@ public class DiscussforumTest {
 		screenShot.captureScreenShot("first");
 		discussforumPOM.clickLearnseleniumlink2();
 		System.out.println("coursebtn");
-		Thread.sleep(2000);
+		wait = properties.getProperty("implicitWait");
 		discussforumPOM.clickForumicon();
 		Thread.sleep(5000);
 		discussforumPOM.clickGroupname();
@@ -73,7 +73,7 @@ public class DiscussforumTest {
         Thread.sleep(2000);
         discussforumPOM.enterThreadtitle("test");
         Thread.sleep(8000);
-        discussforumPOM.writeThreadpostbox("need help");
+        //discussforumPOM.writeThreadpostbox("need help");
         Thread.sleep(2000);
 
         discussforumPOM.clickCreatethreadbtn();
