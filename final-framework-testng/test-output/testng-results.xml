@@ -1,17 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="12426" started-at="2019-01-16T15:08:42Z" finished-at="2019-01-16T15:08:55Z">
+  <suite name="Default suite" duration-ms="100183" started-at="2019-01-18T08:29:37Z" finished-at="2019-01-18T08:31:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="12426" started-at="2019-01-16T15:08:42Z" finished-at="2019-01-16T15:08:55Z">
-      <class name="com.training.sanity.tests.ELTC_073Test">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.ELTC_073Test@59f99ea]" name="setUpBeforeClass" is-config="true" duration-ms="11982" started-at="2019-01-16T15:08:42Z" finished-at="2019-01-16T15:08:54Z">
+    <test name="Default test" duration-ms="100183" started-at="2019-01-18T08:29:37Z" finished-at="2019-01-18T08:31:17Z">
+      <class name="com.training.sanity.tests.ELTC_075Test">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.ELTC_075Test@59f99ea]" name="setUpBeforeClass" is-config="true" duration-ms="12832" started-at="2019-01-18T08:29:37Z" finished-at="2019-01-18T08:29:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-      </class> <!-- com.training.sanity.tests.ELTC_073Test -->
+        <test-method status="PASS" signature="subscribeTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.sanity.tests.ELTC_075Test@59f99ea]" name="subscribeTest" duration-ms="34694" started-at="2019-01-18T08:29:50Z" data-provider="exceldata2-inputs" finished-at="2019-01-18T08:30:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[BL]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Blended Learning]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Selenium]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[BL]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Manzoor]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- subscribeTest -->
+        <test-method status="PASS" signature="subscribeTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.sanity.tests.ELTC_075Test@59f99ea]" name="subscribeTest" duration-ms="19353" started-at="2019-01-18T08:30:25Z" data-provider="exceldata2-inputs" finished-at="2019-01-18T08:30:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[WL]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[WebILT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Selenium Course]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[WL]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Manzoor]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- subscribeTest -->
+        <test-method status="PASS" signature="subscribeTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.sanity.tests.ELTC_075Test@59f99ea]" name="subscribeTest" duration-ms="15950" started-at="2019-01-18T08:30:44Z" data-provider="exceldata2-inputs" finished-at="2019-01-18T08:31:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CL]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ClassRoom]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Testing]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[TL]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Manzoor]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- subscribeTest -->
+        <test-method status="PASS" signature="subscribeTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.sanity.tests.ELTC_075Test@59f99ea]" name="subscribeTest" duration-ms="16605" started-at="2019-01-18T08:31:00Z" data-provider="exceldata2-inputs" finished-at="2019-01-18T08:31:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PJP]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Pre Joining]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[JAVA]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[JV]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Manzoor]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- subscribeTest -->
+      </class> <!-- com.training.sanity.tests.ELTC_075Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

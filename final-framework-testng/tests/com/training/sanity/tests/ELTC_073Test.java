@@ -58,9 +58,10 @@ public class ELTC_073Test {
 		driver.quit();
 	}*/
 
-	@Test(dataProvider ="dbdata-inputs", dataProviderClass = ELTC_073DataProviders.class)
-	public void subscribeTest(String cc,String cn,String ct,String ccode,String tcode) throws InterruptedException, AWTException
+	@Test
+	public void subscribeTest() throws InterruptedException, AWTException
 	{
+		Robot robot = new Robot();
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
@@ -69,12 +70,12 @@ public class ELTC_073Test {
 		eltc073POM.clickAddcatagoryicon();
 		eltc073POM.enterCoursecatagory("BL");
 		String Expcoucatname = eltc073POM.getCoursecategory("value");
-		String Actcoucatname = cc;
+		String Actcoucatname = "BL";
 		Assert.assertEquals(Actcoucatname, Expcoucatname);
 		System.out.println("The Coursecategory is " +Actcoucatname  + " " +Expcoucatname );
 		eltc073POM.enterCoursename("Blended Learning");
 		String Expcoursecatname = eltc073POM.getCoursename("value");
-		String Actcoursecatname = cn;
+		String Actcoursecatname = "Blended Learning";
 		Assert.assertEquals(Actcoursecatname, Expcoursecatname);
 		System.out.println("The Coursecategory name is " +Actcoursecatname  + " " +Expcoursecatname );
 		eltc073POM.clickRadiobtn();
@@ -83,26 +84,28 @@ public class ELTC_073Test {
 		eltc073POM.clickCourselink();
 		eltc073POM.enterCoursetitle("testing");
 		String Expcoursettlname = eltc073POM.getCoursetitle("value");
-		String Actcoursettlname = ct;
+		String Actcoursettlname = "testing";
 		Assert.assertEquals(Actcoursettlname, Expcoursettlname);
 		System.out.println("The Coursecategory title is " +Actcoursettlname  + " " +Expcoursettlname );
 		eltc073POM.enterCoursecode("tes");
 		String Expcoursecodename = eltc073POM.getCoursecode("value");
-		String Actcoursecodename = ccode;
+		String Actcoursecodename = "tes";
 		Assert.assertEquals(Actcoursecodename, Expcoursecodename);
 		System.out.println("The Coursecategory code is " +Actcoursecodename  + " " +Expcoursecodename );
 		eltc073POM.clickTeacherbox();
-		eltc073POM.enterTeachercode("manzoor");
+		eltc073POM.enterTeachercode("manzoor mehadi");
+		robot.keyPress(KeyEvent.VK_ENTER);
+		eltc073POM.clickTeachersMenu();
 		String Expcoursetcrname = eltc073POM.getTeachercode("value");
-		String Actcoursetcrname = tcode;
+		String Actcoursetcrname = "manzoor mehadi";
 		Assert.assertEquals(Actcoursetcrname, Expcoursetcrname);
 		System.out.println("The Coursecategory teacher is " +Actcoursetcrname  + " " +Expcoursetcrname );
 		eltc073POM.clickCatagorybox();
-		eltc073POM.enterCatagoryboxcode("Blended Learning");
+		eltc073POM.enterCatagoryboxcode("(BL) Blended Learning");
 		
 		eltc073POM.clickLanguagebox();
 		eltc073POM.enterLanguageboxcode("English");
-		Robot robot = new Robot();
+		
 		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
 		eltc073POM.clickCreatecoursebtn();

@@ -58,6 +58,7 @@ public class ELTC_075Test {
 	@Test(dataProvider ="exceldata2-inputs", dataProviderClass = ELTC_075DataProviders.class)
 	public void subscribeTest(String cc,String cn,String ct,String ccode,String tcode) throws InterruptedException, AWTException
 	{
+		Robot robot = new Robot();
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
@@ -74,11 +75,13 @@ public class ELTC_075Test {
 		eltc074POM.enterCoursecode(ccode);
 		eltc074POM.clickTeacherbox();
 		eltc074POM.enterTeachercode(tcode);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		eltc074POM.clickTeachersMenu();
 		eltc074POM.clickCatagorybox();
-		eltc074POM.enterCatagoryboxcode("Blended Learning");
+		eltc074POM.enterCatagoryboxcode("(BL) Blended Learning");
 		eltc074POM.clickLanguagebox();
 		eltc074POM.enterLanguageboxcode("English");
-		Robot robot = new Robot();
+		
 		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
 		eltc074POM.clickCreatecoursebtn();

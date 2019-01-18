@@ -1,5 +1,9 @@
 package com.training.pom;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -98,9 +102,11 @@ private WebDriver driver;
 	@FindBy(xpath="//*[@id=\"update_course\"]/fieldset/div[3]/div[1]/div/div/div/input")
 	private WebElement teachercode; 
 	
-	public void enterTeachercode(String tcode) {
+	public void enterTeachercode(String tcode) throws AWTException {
 		this.teachercode.clear();
 		this.teachercode.sendKeys(tcode);
+		Robot rb = new Robot();
+		rb.keyPress(KeyEvent.VK_ENTER);
 }//enters course code
 	public String getTeachercode(String val5) {
 		return this.teachercode.getAttribute(val5);
@@ -154,5 +160,13 @@ private WebDriver driver;
 	public void clickLogoutbtn() {
 		this.logoutbtn.click();
 	}//clicks on logout link for logout
+	
+	@FindBy(xpath="//label[contains(text(),'Teachers')]")
+	private WebElement teachersmenu;
+	
+	public void clickTeachersMenu() {
+		this.teachersmenu.click();
+	}
+	
 
 }
